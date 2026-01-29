@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"> 
+    <!-- importa icones do bootstrap -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola</title>
+    <style>
+
+					body {
+						margin: 0;
+						padding: 0%;
+						font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+						font-weight: 700;
+						background-color: #eeeeee;
+					}
+
+					nav {
+						background-color: white;
+						padding-top: 20px;
+						padding-bottom: 20px;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+					}
+					
+					.LogoInicio {
+						margin: 10px;
+					}
+					
+					.nav-container {
+						display: flex;
+						justify-content: space-around;
+						flex-grow: 1;
+					}
+					
+					.nav-container a {
+						text-decoration: none;
+						font-size: 18px;
+						color: black;
+					}
+					
+					footer {
+						margin: 0px;
+						position: relative;
+						bottom: 0;
+						width: 100%;
+						background-color: black;
+					}
+					
+					.LogoFinal {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						padding: 50px;
+					}
+					
+					footer hr {
+						display: flex;
+						justify-content: center;
+						width: 90%;
+						height: 0.5;
+						background-color: white;
+					}
+					
+					.icones {
+						padding: 50px;
+						display: flex;
+						justify-content: center;
+					}
+					
+
+					.footerlinks {
+						margin-left: 5%;
+						display: flex;
+						justify-content: space-around;
+						gap: 30px;
+					}
+					
+
+					.footerlinks a {
+						padding: 30px;
+						text-decoration: none;
+						color: white;
+						font-size: 20px;
+					}
+					
+
+					.icones i {
+						padding: 50px;
+						font-size: 25px;
+						color: white;
+					}
+					
+					h3 {
+						font-size: 24px;
+					}
+					
+					p {
+						font-weight: 100;
+					}
+				
+					.novo01, .novo02, .exp01, .exp02, h3, p, h2 {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+			
+
+					.novo01 img, .novo02 img, .exp01 img, .exp02 img {
+						width: 50%;
+						border-radius: 3%;
+					}
+			
+                    
+					.slideshow {
+						position: relative;
+						max-width: 900px;
+						margin: auto;
+						margin-top: 5%;
+					}
+					/* relative indica que os elementos dentro dele podem ser posicionados de forma relativa a ele, no caso as 3 imagens, 
+					limitamos a largura para 900px, margin auto fica centralizado, margin top fica distante do nav */
+
+					.slideshow img {
+						border-radius: 3%;
+						width: 100%;
+						display: none;
+					}
+					/* adicionamos um border radius para arrendondar as imagens, largura total do container e display
+					none para que todas as imagens fiquem ocultas e apenas a desejada fique visível */
+
+					input[type="radio"] {
+						display: none;
+					}
+					/* os seletores padrão do radio são ocultados porém são responsaveis por alterar as imagens */
+
+					#slide1:checked ~ .slideshow img:nth-of-type(1),
+					#slide2:checked ~ .slideshow img:nth-of-type(2),
+					#slide3:checked ~ .slideshow img:nth-of-type(3) {
+						display: block;
+					}
+					/* quando algum input é selecionado ele é responsável por alterar o display pra block fazendo com que a imagem apareça */
+
+					.navigation {
+						text-align: center;
+						margin-top: 10px;
+					}
+					/* Responsável por centralizar novos botões e distanciar 10px do carrossel */
+
+					.navigation label {
+						cursor: pointer;
+						display: inline-block;
+						width: 15px;
+						height: 15px;
+						border-radius: 50%;
+						background: gray;
+						margin: 5px;
+					}
+					/* pointer responsável por alterar o cursor para mão, inline-block garante que elas estarão na mesma linha
+					width e height é o tamanho das labels, border radius deixa as labels em forma de círculo, background é a cor da label
+					margin 5px para manter distante de outros elementos */
+
+					#slide1:checked ~ .navigation label[for="slide1"],
+					#slide2:checked ~ .navigation label[for="slide2"],
+					#slide3:checked ~ .navigation label[for="slide3"] {
+						background: blue;
+					}
+					/* se o radio button estiver marcado muda a cor para azul */
+
+    </style>
+</head>
+<body>
+    <nav>
+        <figure class="LogoInicio">
+            <img src="https://www.coca-cola.com/content/dam/onexp/global/icons/Coke-company-logo-black.svg" alt="logococa">
+        </figure>
+        <div class="nav-container">
+                
+        <a href="index.html">Home</a>
+               
+        <a href="Marcas.html">Marcas</a>
+            
+        <a href="Sustentabilidade.html">Sustentabilidade</a>
+            
+        </div>
+    </nav>
+    <main>
+        <input type="radio" name="slides" id="slide1" checked>
+        <input type="radio" name="slides" id="slide2">
+        <input type="radio" name="slides" id="slide3">
+        <!-- cada input representa um slide, quando algum deles está marcado checked significa que este será a exibição atual, e o radio é os botões que iram aparecer para navegar entre as imagens -->
+
+        <div class="slideshow">
+            <img src="https://www.coca-cola.com/content/dam/onexp/br/pt/offerings/coke-studio-24/rock-in-rio/hero_rir.jpg/width1960.jpg" alt="Imagem03">
+            <img src="https://www.coca-cola.com/content/dam/onexp/br/pt/offerings/vai-de-retornavel/hero_nuevo.jpg/width1960.jpg" alt="Imagem02">
+            <img src="https://www.coca-cola.com/content/dam/onexp/br/pt/offerings/coke-studio-24/lolla-25/jao-exclusive/jao-banner-desktop.jpg/width1960.jpg" alt="imagem03">
+        </div>
+        <!-- aqui as imagens que iram estar no carrosel -->
+
+        <div class="navigation">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+        </div>
+        <!-- essas labels são os botões para alterar os slides -->
+        </div>
+        <hr>
+        <h2>O QUE HÁ DE NOVO:</h2>
+        <div class="novo01">
+            <img src="https://www.coca-cola.com/content/dam/onexp/br/pt/brands/sprite/sprite_lemon.jpg/width1960.jpg" alt="novidade01">
+        </div>
+            <h3>Sprite lemon Fresh deixa tudo bem mais leve</h3>
+            <p>Descubra a leveza</p>
+        <div class="novo02">
+            <img src="https://www.coca-cola.com/content/dam/onexp/br/pt/sustainability/retornaveis/nuevas/card-desktop.jpg/width1960.jpg" alt="novidade02">
+        </div>
+            <h3>Só retornavel</h3>
+            <p>Mais sabor para suas refeições pagando apenas pelo liquido</p>
+            <hr>
+        <h2>Experiências</h2>
+        <div class="exp01">
+            <img src="https://www.coca-cola.com/content/dam/onexp/br/pt/campaign-cards/coke_studio_card.jpg/width1960.jpg" alt="Experiência01">
+        </div>
+        <h3>Coke Studio</h3>
+        <p>Experimente a magia da música</p>
+        <div class="exp02">
+            <img src="https://www.coca-cola.com/content/dam/onexp/br/pt/offerings/sprite-summer/content_card_1_fpo.jpg/width1960.jpg" alt="Experiência01">
+        </div>
+        <h3>Refresque-se com sprite</h3>
+        <p>Em casa ou na rua, o calor pode ser sufocante</p>
+        <br>
+    </main>
+    <footer>
+        <figure class="LogoFinal">
+            <img src="https://www.coca-cola.com/content/dam/onexp/global/icons/logo-white-large.svg" alt="logococa">
+        </figure>
+        <!-- logo da coca branca -->
+        <hr>
+        <div class="footerlinks">
+            <a href="index.html">Home</a>
+            <a href="Marcas.html">Marcas</a>
+            <a href="Sustentabilidade.html">Sustentabilidade</a> 
+            <!-- links para as paginas disponiveis -->
+        </div>
+        <hr>
+        <div class="icones">
+            <a href="https://www.facebook.com/CocaColaBrasil/?locale=pt_BR">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.youtube.com/user/cocacola">
+                <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/cocacola/">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <!-- icones com os respectivos links -->
+        </div>
+    </footer>
+    
+</body>
+</html>
